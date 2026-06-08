@@ -1,8 +1,10 @@
 # flight-delay-analytics-portfolio
 An end-to-end data engineering and analytics project that processes millions of U.S. domestic flight records to surface on-time performance (OTP) insights across carriers, routes, and airports — using a production-style medallion architecture.
+
 #**Project Overview**
 Airlines and airport operators rely on OTP data to benchmark performance, identify delay hotspots, and make scheduling decisions. This project replicates that commercial analytics workflow using publicly available BTS (Bureau of Transportation Statistics) On-Time Performance data.
 The pipeline ingests raw flight data, transforms it through Bronze → Silver → Gold layers, loads the Gold tables into a relational database, and visualises key KPIs in an interactive Power BI dashboard.
+
 **#Architecture**
 BTS Raw CSV (Jan 2023)
         │
@@ -47,9 +49,9 @@ flight-delay-analytics/
 │
 ├── notebooks/
 │   ├── 01_bronze_ingestion.ipynb       # Raw CSV → Bronze Delta table
-│   ├── 02_silver_transformation.ipynb  # Cleaning, typing, feature engineering
-│   ├── 03_gold_kpis.ipynb       # KPI table generation
-│   └── 04_mysql_load.ipynb             # Gold → MySQL export
+│   ├── 02_silver_transform.ipynb  		# Cleaning, typing, feature engineering
+│   ├── 03_gold_kpis.ipynb       		# KPI table generation
+│   └── 04_load_mysql.ipynb             # Gold → MySQL export
 │
 ├── data/
 │   └── README.md                       # Data source info + download link
@@ -57,7 +59,7 @@ flight-delay-analytics/
 ├── dashboard/
 │   └── flight_delay_dashboard.pbix     # Power BI report file
 │
-└── README.md
+
 
 📊 **Gold Layer KPI Tables**
 route_kpis
